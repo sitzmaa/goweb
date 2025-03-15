@@ -9,3 +9,7 @@ func FormatCommand(command string) string {
 	// Simple example of converting the command to lowercase and trimming spaces.
 	return strings.TrimSpace(strings.ToLower(command))
 }
+
+func FormatYaml(filePath string) {
+
+}
