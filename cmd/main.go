@@ -10,16 +10,15 @@ import (
 )
 
 func main() {
+	// If there are command-line arguments, process them
 	if len(os.Args) > 1 {
+		// Join the command arguments into a single string
 		command := strings.Join(os.Args[1:], " ")
 
-		// Check for YAML file input
-		if strings.HasSuffix(os.Args[1], ".yaml") {
-			interpreter.HandleYaml(os.Args[1])
-		} else {
-			interpreter.HandleCommand(command)
-		}
+		// Send the entire command string to the interpreter to handle it
+		interpreter.HandleCommand(command)
 	} else {
+		// Otherwise, enter interactive mode
 		interactiveMode()
 	}
 }
